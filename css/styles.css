@@ -1,0 +1,37 @@
+body {
+  font-family: 'Helvetica', sans-serif;
+  text-align: center;
+}
+
+.header {
+  margin: 50px 0 50px;
+}
+
+h1, h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+#errorMessage {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 80px;
+}
+
+#main {
+  border: 2px solid #ddd;
+  border-radius: 30px;
+  padding: 50px;
+  width: 400px;
+  margin: auto;
+}
+
+#main > div {
+  font-size: 22px;
+  margin-top: 20px;
+}
+
+#main > img {
+  width: 180px;
+  height: 180px;
+}
