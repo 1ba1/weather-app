@@ -1,4 +1,13 @@
-const APPID = '78ba970c3e51c5fa09ad4fd0ed10feea';
+const toggleTemperature = (e) => {
+  const div = e.target;
+  const temp = e.target.textContent.split(' ')[0];
+  if (div.textContent.indexOf('F') > -1) {
+    div.textContent = `${Math.round(((+temp - 32) * 5 / 9) * 100) / 100} C°`;
+  } else {
+    div.textContent = `${Math.round(((+temp * 9 / 5) + 32) * 100) / 100} F°`;
+  }
+};
+
 
 const addToDOM = (data) => {
   const main = document.getElementById('main');
@@ -17,11 +26,14 @@ const addToDOM = (data) => {
   weather.textContent = data.weather[0].main;
   icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
   temp.textContent = `${data.main.temp} F°`;
+  temp.addEventListener('click', toggleTemperature, false);
 
   [name, weather, icon, temp].forEach((element) => {
     main.appendChild(element);
   });
 };
+
+const APPID = '78ba970c3e51c5fa09ad4fd0ed10feea';
 
 const fetchData = (e) => {
   e.preventDefault();
@@ -31,7 +43,7 @@ const fetchData = (e) => {
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${
       form.search.value
-    }&appid=${APPID}`
+    }&appid=${APPID}&units=imperial`
   )
     .then((response) => {
       if (response.ok) return response.json();
@@ -52,6 +64,3 @@ const fetchData = (e) => {
 
 const searchButton = document.querySelector('button');
 searchButton.addEventListener('click', fetchData, false);
-
-
-// Toggle Fahrenheit or Celsius

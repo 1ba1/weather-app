@@ -15,7 +15,8 @@ h1, h2 {
 #errorMessage {
   color: red;
   font-size: 12px;
-  margin-bottom: 80px;
+  margin-bottom: 30px;
+  height: 20px;
 }
 
 #main {
@@ -27,11 +28,12 @@ h1, h2 {
 }
 
 #main > div {
-  font-size: 22px;
+  font-size: 28px;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 #main > img {
-  width: 180px;
-  height: 180px;
+  width: 160px;
+  height: 160px;
 }
