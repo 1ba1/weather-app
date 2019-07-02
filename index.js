@@ -4,7 +4,7 @@ const addToDOM = (data) => {
   const main = document.getElementById('main');
 
   // cleanup before adding new information to main div
-  [...main.children].forEach(child => {
+  [...main.children].forEach((child) => {
     main.removeChild(child);
   });
 
@@ -18,7 +18,7 @@ const addToDOM = (data) => {
   icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
   temp.textContent = `${data.main.temp} F°`;
 
-  [name, weather, icon, temp].forEach(element => {
+  [name, weather, icon, temp].forEach((element) => {
     main.appendChild(element);
   });
 };
@@ -33,12 +33,12 @@ const fetchData = (e) => {
       form.search.value
     }&appid=${APPID}`
   )
-    .then(response => {
+    .then((response) => {
       if (response.ok) return response.json();
       throw Error('City Not Found');
     })
     .then(data => addToDOM(data))
-    .catch(err => {
+    .catch((err) => {
       const errorDiv = document.getElementById('errorMessage');
       errorDiv.textContent = err;
       setTimeout(() => {
