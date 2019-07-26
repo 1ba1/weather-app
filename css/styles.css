@@ -58,8 +58,8 @@ button {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 425px) {
   .main-styles {
-    width: 200px;
+    width: 180px;
   }
 }
