@@ -12,6 +12,20 @@ h1, h2 {
   margin-bottom: 20px;
 }
 
+input {
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+button {
+  padding: 5px;
+  background-color: #e30;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  color: #fff;s
+}
+
 #errorMessage {
   color: red;
   font-size: 12px;
@@ -19,7 +33,7 @@ h1, h2 {
   height: 20px;
 }
 
-#main {
+.main-styles {
   border: 2px solid #ddd;
   border-radius: 30px;
   padding: 50px;
