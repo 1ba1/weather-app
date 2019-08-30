@@ -1,9 +1,10 @@
-import './css/styles.css';
 import search from './search';
+import './css/styles.css';
+import './css/style.css';
 
 const form = document.querySelector('form');
-const searchButton = document.querySelector('button');
-searchButton.addEventListener('click', (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
-  search(form.search.value);
+  search(e.target.search.value);
+  e.target.reset();
 }, false);

@@ -10,7 +10,7 @@ export default async (value) => {
   }&appid=${APPID}&units=imperial`;
   try {
     const res = await fetch(path);
-    if (res.data.error) throw Error('Location Not Found');
+    if (!res.data) throw Error('Location Not Found');
     addToDOM(res.data);
   } catch (err) {
     errorHandler(err);
