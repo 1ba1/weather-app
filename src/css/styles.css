@@ -67,9 +67,21 @@ button {
 }
 
 @media screen and (max-width: 425px) {
+  .header {
+    margin-bottom: 20px;
+  }
+
+  #errorMessage {
+    margin-bottom: 10px;
+  }
+
   .main-styles {
     width: 180px;
-    padding: 30px;
+    padding: 20px;
+  }
+
+  h1 {
+    margin-bottom: 10px;
   }
 
   h2 {
