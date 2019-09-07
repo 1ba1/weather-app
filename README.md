@@ -34,8 +34,23 @@ Fork this repository and then clone it on your local machine.
 
 Run `npm install` to install all project dependencies.
 
-In order to create the main Javscript file run the following command:
+### API Key
 
+In order to be able to fetch data from the API you must sign up to the
+[Open Weather Map](https://openweathermap.org/current) website and obtain your personal API key.
+Then navigate to `weather-app/src/search.js` file and replace
+`process.env.API_KEY` with your newly generated key.
+
+```diff
+const path = `https://api.openweathermap.org/data/2.5/weather?q=${
+    value
+}&appid=${
+-  process.env.API_KEY
++ 'your personal api key'
+}&units=imperial`;
+
+```
+After that, run the following command to create your new `main.js` file:
 ```
 npx webpack
 ```
