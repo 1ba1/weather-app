@@ -18,7 +18,7 @@ export default (data) => {
 
   name.textContent = data.name;
   weather.textContent = data.weather[0].description;
-  icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+  icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
   temp.textContent = `${data.main.temp} F°`;
   temp.addEventListener('click', toggleTemperature, false);
   humidity.textContent = `Humidity: ${data.main.humidity}%`;
