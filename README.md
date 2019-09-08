@@ -37,20 +37,19 @@ Run `npm install` to install all project dependencies.
 ### API Key
 
 In order to be able to fetch data from the API you must sign up to the
-[Open Weather Map](https://openweathermap.org/current) website and obtain your personal API key.
-Then navigate to `weather-app/src/search.js` file and replace
-`process.env.API_KEY` with your newly generated key.
+[Open Weather Map](https://openweathermap.org/current) website and obtain your
+personal API key.
 
-```diff
-const path = `https://api.openweathermap.org/data/2.5/weather?q=${
-    value
-}&appid=${
--  process.env.API_KEY
-+ 'your personal api key'
-}&units=imperial`;
+Then create a new file in the root directory named `.env` and add your API key
+to it.
+
+wheather-app/.env
+```
+API_KEY="your personal API key"
 
 ```
-After that, run the following command to create your new `main.js` file:
+
+Now run the following command to generate your new `dist/main.js` file:
 ```
 npx webpack
 ```
