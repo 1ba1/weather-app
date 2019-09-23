@@ -2,9 +2,10 @@ import fetch from './fetch';
 import addToDOM from './addToDOM';
 import errorHandler from './errorHandler';
 
-export default async (value) => {
+export default async (event) => {
+  event.preventDefault();
   const path = `https://api.openweathermap.org/data/2.5/weather?q=${
-    value
+    event.target.search.value
   }&appid=${process.env.API_KEY}&units=imperial`;
   try {
     const res = await fetch(path);
@@ -13,4 +14,5 @@ export default async (value) => {
   } catch (err) {
     errorHandler(err.message);
   }
+  event.target.reset();
 };
